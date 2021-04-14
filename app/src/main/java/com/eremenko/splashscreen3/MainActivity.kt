@@ -1,3 +1,4 @@
+@file:Suppress("DEPRECATION")
 package com.eremenko.splashscreen3
 
 import android.content.Intent
