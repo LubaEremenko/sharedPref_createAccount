@@ -25,7 +25,9 @@
             android:paddingTop="15dp"
             android:textColor="@color/white"
             android:textSize="50px"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+
+            />
 
 
 
