@@ -19,19 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       image = findViewById(R.id.id_logo);
-        image.animate().alpha(4000).setDuration(0);
 
-        handler = new Handler();
-        handler.postdelayed(new Runnable(){
-            @Override
-            public void run() {
-                Intent dsp = new Intent(MainActivity,this,LoginActivity.class);
-                startActivity(dsp);
-                finish();
-            }
-
-        },delay )
 
 
 
