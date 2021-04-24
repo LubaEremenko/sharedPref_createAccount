@@ -32,19 +32,22 @@
 
         <activity
             android:name=".DublinMap"
-            android:label="@string/title_activity_dublin_map"></activity>
-        <activity
-            android:name=".ui.login.LoginActivity2"
-            android:label="@string/title_activity_login2" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".back" />
-        <activity android:name=".MainActivity">
+            android:label="@string/title_activity_dublin_map">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
+
+
+
+
+
+
         <activity
             android:name=".StationDetail"
             android:label="Detail of station"
@@ -53,6 +56,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RecyclerActivity" />
         </activity>
+
+
+
     </application>
+
+
+
+
 
 </manifest>

@@ -26,7 +26,7 @@ class LoginActivity2 : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
 
-        val username = findViewById<EditText>(R.id.username)
+        val username = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
@@ -34,7 +34,7 @@ class LoginActivity2 : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
                 .get(LoginViewModel::class.java)
 
-        loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
+        loginViewModel.loginFormState.observe(this@LoginActivity2, Observer {
             val loginState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
@@ -48,7 +48,7 @@ class LoginActivity2 : AppCompatActivity() {
             }
         })
 
-        loginViewModel.loginResult.observe(this@LoginActivity, Observer {
+        loginViewModel.loginResult.observe(this@LoginActivity2, Observer {
             val loginResult = it ?: return@Observer
 
             loading.visibility = View.GONE

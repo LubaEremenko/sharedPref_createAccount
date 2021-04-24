@@ -100,6 +100,8 @@ class DublinMap : AppCompatActivity(), OnMapReadyCallback {
         val dublinPhenix = LatLng(53.356290, -6.334203)
         val dublinSpier = LatLng(53.349713, -6.260088)
 
+
+
         val zoomLevel = 15f
 
         map.addMarker(MarkerOptions().position(dublinGreen).title("Marker in St.Stephen Green Park"))
@@ -117,6 +119,19 @@ class DublinMap : AppCompatActivity(), OnMapReadyCallback {
         setMapLongClick(map)
         setPoiClick(map)
         enableMyLocation()
+    }
+
+    private fun setPoiClick(map: GoogleMap) {
+        //TODO("Not yet implemented")
+        map.setOnPoiClickListener { poi ->
+            val poiMarker = map.addMarker(
+                    MarkerOptions()
+                            .position(poi.latLng)
+                            .title(poi.name)
+            )
+            poiMarker.showInfoWindow()
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -142,43 +157,34 @@ class DublinMap : AppCompatActivity(), OnMapReadyCallback {
         R.id.terrain_map -> {
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
             true
-        }
+       }
         else -> super.onOptionsItemSelected(item)
     }
 
     private fun setMapLongClick(map:GoogleMap) {
         map.setOnMapClickListener { latLng ->
             val snippet = String.format(
-                Locale.getDefault(),
-                "Lat: %1$.5f, Long: %2$.5f",
-                latLng.latitude,
-                latLng.longitude
+                    Locale.getDefault(),
+                    "Lat: %1$.5f, Long: %2$.5f",
+                    latLng.latitude,
+                    latLng.longitude
             )
 
 
             map.addMarker(
-                MarkerOptions()
-                    .position(latLng)
-                    .title(getString(R.string.dropped_pin))
-                    .snippet(snippet)
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                    MarkerOptions()
+                            .position(latLng)
+                            .title(getString(R.string.dropped_pin))
+                            .snippet(snippet)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
 
 
             )
             // it is around here you grab and store coordinates PREFERENCES
-    }
-
-    private fun setPoiClick(map: GoogleMap) {
-        map.setOnPoiClickListener { poi ->
-            val poiMarker = map.addMarker(
-                MarkerOptions()
-                    .position(poi.latLng)
-                    .title(poi.name)
-            )
-            poiMarker.showInfoWindow()
         }
-    }
 
+
+    }
 
 
 
