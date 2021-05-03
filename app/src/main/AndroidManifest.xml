@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eremenko.splashscreen3">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -18,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SplashScreen3">
 
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".CreateAccaunt" />
+        <activity android:name=".Splash_Screen2" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,21 +36,20 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".DublinMap"
-            android:label="@string/title_activity_dublin_map">
-
+            android:name=".Splash_Screen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
 
+
+        <activity android:name=".Login">
 
         </activity>
-
-
-
-
 
 
         <activity
@@ -56,13 +60,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RecyclerActivity" />
         </activity>
-
-
-
     </application>
-
-
-
-
 
 </manifest>
