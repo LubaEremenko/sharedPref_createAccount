@@ -20,5 +20,6 @@
     <string name="poi">poi</string>
     <string name="paris">paris</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login_empty">LoginActivity_empty</string>
 
 </resources>
